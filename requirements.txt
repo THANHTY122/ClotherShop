@@ -31,7 +31,7 @@ pytz==2024.2
 requests==2.32.3
 requests-oauthlib==2.0.0
 scikit-learn==1.5.2
-scikit-surprise==1.1.1
+scikit-surprise==1.1.0
 scipy==1.14.1
 setuptools==75.2.0
 six==1.16.0
