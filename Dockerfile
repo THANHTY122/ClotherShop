@@ -16,11 +16,8 @@ WORKDIR /app
 # Sao chép tệp requirements.txt vào thư mục /app
 COPY requirements.txt /app/
 
-# Cài đặt các gói phụ thuộc ngoại trừ scikit-surprise
-RUN pip install --no-cache-dir -r requirements.txt --no-deps
-
-# Cài đặt scikit-surprise từ wheel
-RUN pip install --no-cache-dir https://github.com/NicolasHug/Surprise/archive/v1.1.0.tar.gz
+# Cài đặt các gói phụ thuộc
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Sao chép toàn bộ mã nguồn dự án vào container
 COPY . /app/
