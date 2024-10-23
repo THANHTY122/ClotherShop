@@ -1,4 +1,4 @@
-# Sử dụng image Python đầy đủ thay vì slim
+# Sử dụng image Python đầy đủ
 FROM python:3.11
 
 # Cài đặt các công cụ build bổ sung
@@ -16,8 +16,11 @@ WORKDIR /app
 # Sao chép tệp requirements.txt vào thư mục /app
 COPY requirements.txt /app/
 
-# Cài đặt các gói phụ thuộc trong requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Cài đặt các gói phụ thuộc ngoại trừ scikit-surprise trước
+RUN pip install --no-cache-dir -r requirements.txt --no-deps
+
+# Cài đặt riêng scikit-surprise sau để kiểm soát quá trình cài đặt
+RUN pip install --no-cache-dir scikit-surprise
 
 # Sao chép toàn bộ mã nguồn dự án vào container
 COPY . /app/
