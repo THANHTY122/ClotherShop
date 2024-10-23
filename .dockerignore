@@ -9,7 +9,7 @@ venv/
 env/
 
 # Bỏ qua cơ sở dữ liệu SQLite (nếu dự án sử dụng SQLite)
-db.sqlite3
+#db.sqlite3
 
 # Bỏ qua các tệp log
 *.log
